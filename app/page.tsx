@@ -3,7 +3,7 @@ import Gallery from '@/components/Gallery'
 import Banner1 from '@/components/Banner1'
 import React from 'react'
 import Home1 from '@/home/Home1'
-import Footer from '@/components/Footer'
+import Footer1 from '@/components/Footer1'
 
 const page = () => {
   return (
@@ -11,7 +11,7 @@ const page = () => {
 <Banner1/>
       <Book/>
     <Home1/>
-<Footer/>
+<Footer1/>
     </div>
   )
 }

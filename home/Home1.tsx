@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home1 = () => {
   return (
-    <div className="p-6">
+    <div className="p-6 mt-10 mb-10">
       <h1 className="text-2xl font-bold mb-6 text-center">
         All our room types include complementary breakfast
       </h1>
