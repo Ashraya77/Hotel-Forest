@@ -11,7 +11,6 @@ const page = () => {
 <Banner1/>
       <Book/>
     <Home1/>
-<Footer1/>
     </div>
   )
 }

@@ -1,10 +1,27 @@
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useState , useEffect} from 'react'
 
 const Navbar = () => {
+    const [color, setColor] = useState(false)
+
+    useEffect(() => {
+    const changeColor = () => {
+      if (window.scrollY > 100) {
+        setColor(true)
+      } else {
+        setColor(false)
+      }
+    }
+
+    window.addEventListener('scroll', changeColor)
+   
+  }, [])
+
   return (
-    <nav className='flex justify-between p-5 px-60 sticky left-0 top-0 right-0 z-1'>
-        <div>
+    <nav className={`flex justify-between items-center p-5 px-60 sticky top-0 left-0 right-0 transition-colors duration-300 ${color ? 'bg-black text-white shadow-lg' : 'bg-transparent text-black'
+      } z-10`}>
+          <div>
             <Link className='font-extrabold text-3xl' href="/">
                 Hotel
             </Link>

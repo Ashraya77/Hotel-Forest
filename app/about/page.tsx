@@ -4,7 +4,7 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-      <div className='absolute top-20 left-40 overflow-hidden w-400 h-200 rounded-2xl flex items-center justify-center'>
+      <div className='pb-50 mb-10 overflow-hidden w-400 h-200 ml-35 rounded-2xl flex items-center justify-center'>
         <img src="/gallery/11.jpeg" alt="" />
       </div>
       <div className='absolute top-100 left-150 text-center'> 

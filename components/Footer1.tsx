@@ -15,7 +15,7 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-
 export default function Footer1() {
   return (
     <Footer>
-      <div className="w-full px-40 mt-10 py-10 rounded-2xl m-0 bg-teal-600 text-amber-50">
+      <div className="w-full px-40  py-10 rounded-2xl m-0 bg-teal-600 text-amber-50">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
             <FooterBrand
