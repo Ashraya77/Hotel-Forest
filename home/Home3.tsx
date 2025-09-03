@@ -128,7 +128,7 @@ const Home3 = () => {
           </button>
 
           <button
-            className="bg-green-700 text-white font-medium px-4 py-2 rounded-xl hover:bg-blue-600 transition"
+            className="bg-green-700 text-white font-medium px-4 py-2 rounded-xl hover:bg-green-600 transition"
             onClick={handleClick}
           >
             Next 

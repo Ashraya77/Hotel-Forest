@@ -86,7 +86,7 @@ const Navbar = () => {
         ) : (
           <>
             <Link
-              className=" font-bold bg-teal-700 rounded-3xl p-2 px-5 hover:bg-teal-600 mr-3"
+              className=" font-bold bg-teal-700 text-white rounded-3xl p-2 px-5 hover:bg-teal-600 mr-3"
               href="/login"
             >
               Login
@@ -94,7 +94,7 @@ const Navbar = () => {
 
             <Link
               href="/sign-up"
-              className=" font-bold bg-teal-700 rounded-3xl p-2 px-5 hover:bg-teal-600"
+              className=" font-bold bg-teal-700 text-white rounded-3xl p-2 px-5 hover:bg-teal-600"
             >
               Sign Up
             </Link>
