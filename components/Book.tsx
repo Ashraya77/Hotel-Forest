@@ -1,19 +1,32 @@
-import Link from 'next/link'
+"use client"
+import { useAuthStore } from '@/store/authStore'
+import { useRouter } from 'next/navigation'
 import React from 'react'
-import DatePicker1 from './DatePicker1'
+import toast from 'react-hot-toast'
 
 const Book = () => {
+
+  const router = useRouter()
+  const { user  } = useAuthStore();
+
+  const click = ()=>{
+    if(!user){
+      toast.error("Please Login First")
+      router.push("/login");
+    }else{
+      router.push("/rooms")
+    }
+  }
   return (
-    <div className="-mt-0 top-10 left-0 relative z-1 w-350 mx-auto">
-      <div className="bg-teal-500 shadow-xl rounded-2xl p-6 text-center justify-between px-20 flex items-center"  >
-        <DatePicker1/>
+    <div className="-mt-0 top-5 left-0 relative z-1 flex justify-center">
         <div className=''>
-            <Link className='bg-amber-300 p-2 rounded-2xl hover:bg-amber-500 flex items-center' href="/booknow">
-            Book Now
-        </Link>
+            <button
+            onClick={click}
+            className='bg-amber-300 p-2 rounded-xl  hover:bg-amber-500 px-10 py-3  flex items-center'>
+            View Available Rooms
+        </button>
         </div>
         
-      </div>
     </div>
   )
 }

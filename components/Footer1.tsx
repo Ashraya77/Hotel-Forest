@@ -15,22 +15,17 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-
 export default function Footer1() {
   return (
     <Footer>
-      <div className="w-full px-40  py-10 rounded-2xl m-0 bg-teal-600 text-amber-50">
+      <div className="w-full px-40  py-10 rounded-2xl m-0 bg-green-950 text-white">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
-            <FooterBrand
-              href="https://flowbite.com"
-              src="https://flowbite.com/docs/images/logo.svg"
-              alt="Flowbite Logo"
-              name="Hotel Forest"
-            />
+           Hotel Forest
           </div>
           <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
             <div>
               <FooterTitle title="about" />
               <FooterLinkGroup col>
                 <FooterLink href="#">Hotel Forest</FooterLink>
-                <FooterLink href="#">Tailwind CSS</FooterLink>
+                <FooterLink href="/#">Services</FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
@@ -50,7 +45,7 @@ export default function Footer1() {
           </div>
         </div>
         <FooterDivider />
-        <div className="w-full sm:flex sm:items-center sm:justify-between">
+        <div className="w-full sm:flex sm:items-center sm:justify-between ">
           <FooterCopyright href="#" by="Flowbite™" year={2022} />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <FooterIcon href="#" icon={BsFacebook} />
