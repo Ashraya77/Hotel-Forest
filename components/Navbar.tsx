@@ -1,13 +1,11 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { useAuthStore } from "../store/authStore";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
 const Navbar = () => {
   const [color, setColor] = useState(false);
-  const { user, logout } = useAuthStore();
   const router = useRouter();
 
   useEffect(() => {
@@ -27,18 +25,6 @@ const Navbar = () => {
     toast.error("Please Login ");
   };
 
-  const handleClick = () => {
-    if (!user) {
-      router.push("/login");
-      notify();
-    } else {
-      router.push("/rooms");
-    }
-  };
-
-  const profileClick = () => {
-    router.push("/profile");
-  };
 
   return (
     <nav
@@ -54,52 +40,34 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="flex gap-10 font-bold items-center">
-        <Link className="" href="/">
+      <div className="flex gap-10 font-bold items-center">  
+        <Link className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all hover:after:w-full" href="/">
           Home
         </Link>
-        <Link className="" href="/about">
+        <Link className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all hover:after:w-full" href="/about">
           About Us
         </Link>
-        <Link href="/services">Services</Link>
-        <Link href="/contact">Contact</Link>
-        <Link href="/gallery">Gallery</Link>
+        <Link className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all hover:after:w-full" href="/services">Services</Link>
+        <Link className="relative  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all hover:after:w-full" href="/contact">Contact</Link>
+        <Link className="relative  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all hover:after:w-full" href="/gallery">Gallery</Link>
       </div>
 
       <div className="flex items-center pr-10">
-        {user ? (
           <>
-            <img
+            {/* <Link href="/rooms"
+                className=" font-bold bg-teal-700 rounded-3xl p-2 px-5 hover:bg-teal-600"
+              >
+                Book Now
+              </Link> */}
+
+             <img
               src="1.jpg"
               alt="avatar"
-              className="w-9 h-9 rounded-full mr-3"
-              onClick={profileClick}
+              className="w-9 h-9 rounded-full ml-5"
             />
-
-            <button
-              onClick={handleClick}
-              className=" font-bold bg-teal-700 rounded-3xl p-2 px-5 hover:bg-teal-600"
-            >
-              Book Now
-            </button>
           </>
-        ) : (
-          <>
-            <Link
-              className=" font-bold bg-teal-700 text-white rounded-3xl p-2 px-5 hover:bg-teal-600 mr-3"
-              href="/login"
-            >
-              Login
-            </Link>
-
-            <Link
-              href="/sign-up"
-              className=" font-bold bg-teal-700 text-white rounded-3xl p-2 px-5 hover:bg-teal-600"
-            >
-              Sign Up
-            </Link>
-          </>
-        )}
+       
+     
       </div>
     </nav>
   );

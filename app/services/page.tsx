@@ -24,26 +24,30 @@ const page = () => {
         </p>
       </div>
 
-      <h1 className="text-2xl text-center font-extrabold p-5">
+     {/* Facilities Title */}
+      <h2 className="text-3xl md:text-4xl text-center font-extrabold py-10">
         Our Facilities
-      </h1>
+      </h2>
 
-      <div className="flex flex-col gap-10 items-center ">
+      {/* Services Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 px-5 md:px-20 pb-20 mx-60">
         {services.map((service) => (
-          <div key={service.id} className="relative w-[1200] hover:scale-110 transition-transform duration-300">
-            <img 
-            className="w-full h-[600px] object-cover shadow-lg"
-            src={service.img} alt="" />
-
-            <div className="absolute bg-white bottom-0 left-1/2 -translate-x-1/2 px-20 py-3 shadow-md">
-              <h1>{service.name}</h1>
+          <div
+            key={service.id}
+            className="relative overflow-hidden rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              className="w-full h-80 md:h-96 object-cover"
+              src={service.img}
+              alt={service.name}
+            />
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white bg-opacity-90 px-6 py-2 rounded-lg shadow-md">
+              <h3 className="text-lg md:text-xl font-semibold text-center">
+                {service.name}
+              </h3>
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="bg-white h-10">
-
       </div>
     </div>
   );

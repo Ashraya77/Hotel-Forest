@@ -4,25 +4,23 @@ import { motion } from "framer-motion";
 
 const Home1 = () => {
   return (
-    <div className="p-6 mt-50 mb-10">
-      <h1 className="text-2xl font-bold mb-6 text-center">
-        All our room types include complementary breakfast
-      </h1>
-
+    <div className="p-6 mt-20 mb-10 ">
+      
+       <h1 className="text-2xl py-3 text-center font-bold">
+            Welcome to Hotel Forest Backpackin
+          </h1>
       <motion.div
         className="flex gap-5 justify-center"
-        initial={{ y: 80, opacity: 0 }}
+        initial={{ y: 120, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className=" py-10 w-200 pr-10">
-          <h1 className="text-2xl py-3 font-bold">
-            Welcome to Hotel Forest Backpackin
-          </h1>
-          <p className="w-150 text-justify text-gray-600 ">
+        <div className=" py-10 w-240 pr-10">
+         
+          <p className="w-200 text-justify text-gray-600">
             At Hotel Forest Backpacking, we believe every guest deserves a
-            memorable experience. From the moment you step into our welcoming
+           memorable experience. From the moment you step into our welcoming
             lobby, you'll feel the warmth of our service and the charm of our
             nature-inspired design. Our rooms are thoughtfully crafted to
             provide maximum comfort, with soft linens, cozy furniture, and large
@@ -43,7 +41,7 @@ const Home1 = () => {
           </p>
         </div>
 
-        <div className="flex relative z-0 w-80 h-80 ">
+        <div className="flex relative z-0 w-100 h-80 ">
           <img
             src="1.jpg"
             alt=""

@@ -2,59 +2,61 @@ import Image from "next/image";
 import Link from "next/link";
 
 const rooms = [
-  { id: 1, name: "Room 1", title: "Cozy room", image1: "/room1.webp", image2: "/room1.webp", price: "Rs 100" },
-  { id: 2, name: "Room 2", title: "Spacious room", image1: "/room2.webp",image2: "/room2.webp", price:"Rs 200" },
-  { id: 3, name: "Room 3", title: "Luxury suite", image1: "/room3.webp",image2: "/room3.webp", price:"Rs 300" },
+  { id: 1, name: "Mountain View", title: "Cozy & Comfortable", image1: "/room1.webp", price: "Rs 100/night" },
+  { id: 2, name: "Ocean Suite", title: "Spacious & Luxurious", image1: "/room2.webp", price: "Rs 200/night" },
+  { id: 3, name: "Presidential Suite", title: "Luxury with Panoramic Views", image1: "/room3.webp", price: "Rs 300/night" },
 ];
 
 export default function Page() {
   return (
-    <div className="grid grid-cols-1 gap-6 p-6 mx-50 ">
-      {rooms.map((room) => (
+    <div className="bg-green-50 min-h-screen px-6 md:px-20 lg:px-40 py-12 mx-60">
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-green-800">
+        Our Exclusive Rooms
+      </h1>
 
-         <div key={room.id} className="p-5 border-stone-200 rounded-xl shadow-lg flex h-100 overflow-hidden hover:scale-110 transition-transform duration-300 pl-5">
-          <div className="h-auto w-210 p-20">
-          <h2 className="text-3xl font-semibold mt-3 text-center">{room.name}</h2>
-          <p className="text-gray-600 text-center">{room.title}</p>
-          <p className="text-gray-600 text-center">{room.price}</p>
-
-          <div className="flex justify-center pt-10 gap-5">
-            <Link 
-            href={`/rooms/${room.id}`}
-            className="inline-block mt-4 px-4 py-2 bg-teal-600 text-white rounded-lg "
+      <div className="flex flex-col gap-8">
+        {rooms.map((room) => (
+          <div
+            key={room.id}
+            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex flex-col md:flex-row overflow-hidden"
           >
-            Book Now
-          </Link>
-            <Link 
-            href={`/rooms/${room.id}`}
-            className="inline-block mt-4 px-4 py-2 bg-teal-600 text-white rounded-lg"
-          >
-            View Details
-          </Link>
-          </div>
-          
-          </div>
+            {/* Left: Image */}
+            <div className="relative w-full md:w-1/3 h-64 md:h-auto">
+              <Image
+                src={room.image1}
+                alt={room.name}
+                fill
+                className="object-cover"
+              />
+            </div>
 
-          <div className="flex justify-end p-5 ">
-            <Image 
-            src={room.image1} 
-            alt={room.name} 
-            width={400} 
-            height={250} 
-            className="object-fit h-80 w-300 overflow-hidden pr-5 rounded-2xl" 
-          />
-            <Image 
-            src={room.image2} 
-            alt={room.name} 
-            width={400} 
-            height={250} 
-            className="object-fit h-80 w-300 overflow-hidden rounded-2xl "
-          />
+            {/* Right: Details */}
+            <div className="p-6 flex flex-col justify-between w-full md:w-2/3">
+              <div>
+                <h2 className="text-2xl font-semibold text-green-800">{room.name}</h2>
+                <p className="text-gray-600 mt-1">{room.title}</p>
+              </div>
+
+              <p className="text-green-700 text-xl font-bold mt-4">{room.price}</p>
+
+              <div className="flex gap-4 mt-6">
+                <Link
+                  href={`/rooms/${room.id}`}
+                  className="flex-1 text-center px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-xl font-semibold hover:from-green-500 hover:to-green-700 transition-colors"
+                >
+                  Book Now
+                </Link>
+                <Link
+                  href={`/rooms/${room.id}`}
+                  className="flex-1 text-center px-6 py-3 border border-green-600 text-green-600 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition-colors"
+                >
+                  View Details
+                </Link>
+              </div>
+            </div>
           </div>
-          
-        </div>
-       
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

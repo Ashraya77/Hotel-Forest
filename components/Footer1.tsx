@@ -14,45 +14,87 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-
 
 export default function Footer1() {
   return (
-    <Footer>
-      <div className="w-full px-40  py-10 rounded-2xl m-0 bg-green-950 text-white">
-        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-          <div>
-           Hotel Forest
+    <Footer className="bg-gradient-to-r from-green-900 via-green-950 to-green-900 text-white rounded-t-3xl shadow-xl">
+      <div className="w-full px-10 md:px-24 lg:px-40 py-12">
+        <div className="flex flex-col md:flex-row justify-between gap-10">
+          <div className="flex flex-col gap-4">
+            <h1 className="text-3xl font-extrabold tracking-tight">Hotel Forest</h1>
+            <p className="text-gray-300 max-w-xs">
+              Experience luxury and comfort at the heart of nature. Relax, unwind, and create unforgettable memories.
+            </p>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div>
-              <FooterTitle title="about" />
+              <FooterTitle title="About" />
               <FooterLinkGroup col>
-                <FooterLink href="#">Hotel Forest</FooterLink>
-                <FooterLink href="/#">Services</FooterLink>
+                <FooterLink href="#" className="hover:text-green-300 transition">
+                  Hotel Forest
+                </FooterLink>
+                <FooterLink href="#" className="hover:text-green-300 transition">
+                  Services
+                </FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
-              <FooterTitle title="Follow us" />
+              <FooterTitle title="Follow Us" />
               <FooterLinkGroup col>
-                <FooterLink href="#">Github</FooterLink>
-                <FooterLink href="#">Discord</FooterLink>
+                <FooterLink href="#" className="hover:text-green-300 transition">
+                  Github
+                </FooterLink>
+                <FooterLink href="#" className="hover:text-green-300 transition">
+                  Discord
+                </FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
               <FooterTitle title="Legal" />
               <FooterLinkGroup col>
-                <FooterLink href="#">Privacy Policy</FooterLink>
-                <FooterLink href="#">Terms &amp; Conditions</FooterLink>
+                <FooterLink href="#" className="hover:text-green-300 transition">
+                  Privacy Policy
+                </FooterLink>
+                <FooterLink href="#" className="hover:text-green-300 transition">
+                  Terms &amp; Conditions
+                </FooterLink>
               </FooterLinkGroup>
             </div>
           </div>
         </div>
-        <FooterDivider />
-        <div className="w-full sm:flex sm:items-center sm:justify-between ">
-          <FooterCopyright href="#" by="Flowbite™" year={2022} />
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-            <FooterIcon href="#" icon={BsFacebook} />
-            <FooterIcon href="#" icon={BsInstagram} />
-            <FooterIcon href="#" icon={BsTwitter} />
-            <FooterIcon href="#" icon={BsGithub} />
-            <FooterIcon href="#" icon={BsDribbble} />
+
+        <FooterDivider className="my-8 border-gray-700" />
+
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <FooterCopyright
+            href="#"
+            by="Hotel Forest™"
+            year={new Date().getFullYear()}
+          />
+          <div className="flex space-x-6">
+            <FooterIcon
+              href="#"
+              icon={BsFacebook}
+              className="hover:text-green-300 transition-transform transform hover:scale-110"
+            />
+            <FooterIcon
+              href="#"
+              icon={BsInstagram}
+              className="hover:text-green-300 transition-transform transform hover:scale-110"
+            />
+            <FooterIcon
+              href="#"
+              icon={BsTwitter}
+              className="hover:text-green-300 transition-transform transform hover:scale-110"
+            />
+            <FooterIcon
+              href="#"
+              icon={BsGithub}
+              className="hover:text-green-300 transition-transform transform hover:scale-110"
+            />
+            <FooterIcon
+              href="#"
+              icon={BsDribbble}
+              className="hover:text-green-300 transition-transform transform hover:scale-110"
+            />
           </div>
         </div>
       </div>

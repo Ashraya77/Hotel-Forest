@@ -8,7 +8,7 @@ function Banner1() {
   return (
     <div className="flex items-center px-4 bg-stone-100 lg:px-24">
       <img
-        className="absolute top-0 left-0 right-0 z-0 w-full overflow-hidden h-250"
+        className="absolute top-0 left-0 right-0 z-0 w-full overflow-hidden h-220"
         src="banner2.jpg"
         alt=""
       />
@@ -30,7 +30,18 @@ function Banner1() {
             affordable."{" "}
           </p>
 
-          <div></div>
+           <div className="flex gap-4 relative">
+            <Link href="/rooms">
+              <button className="px-6 py-3 font-bold text-white bg-green-700 rounded-lg hover:bg-green-800 transition">
+                Book Now
+              </button>
+            </Link>
+            <Link href="/about">
+              <button className="px-6 py-3 font-bold text-green-700 bg-white rounded-lg hover:bg-gray-200 transition">
+                Learn More
+              </button>
+            </Link>
+          </div>
         </motion.div>
 
         <div className="pr-50 relative z-0">
@@ -40,6 +51,7 @@ function Banner1() {
           <BannerCard />
         </div>
       </div>
+      
     </div>
   );
 }
